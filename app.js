@@ -17,25 +17,24 @@ let totalGuesses = 0;
 
 shedButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-
+    handleGuess('shed', getRandomHidingSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 treeButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-
+    handleGuess('tree', getRandomHidingSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 boulderButton.addEventListener('click', () => {
     // get a random item to call the 'correct spot'
-
+    handleGuess('boulder', getRandomHidingSpot);
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
 
 function getRandomHidingSpot() {
-    // initialize state
     const hidingPlaces = [
         'tree',
         'shed',
@@ -45,12 +44,12 @@ function getRandomHidingSpot() {
     const index = Math.floor(Math.random() * hidingPlaces.length);
 
     // use the random index above and the array of hidingPlaces to get a random hiding place string
-
+    return hidingPlaces[index];
     // return that random hiding place string
 }
 
 function handleGuess(userGuess, correctSpot) {
-    // first, right after clicking, we need to remove the emoiji face from the previous hiding place that way we don't end up with more than one emoji face
+    // first, right after clicking, we need to remove the emoji face from the previous hiding place that way we don't end up with more than one emoji face
 
     // we can do that by removing the .face class from all containers
 
