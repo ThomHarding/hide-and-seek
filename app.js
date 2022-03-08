@@ -11,6 +11,9 @@ const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
 
+const shedTotal = document.getElementById('shed-total');
+const boulderTotal = document.getElementById('boulder-total');
+const treeTotal = document.getElementById('tree-total');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
@@ -68,4 +71,5 @@ function handleGuess(userGuess, correctSpot) {
     totalEl.innerText = totalGuesses;
     lossesEl.innerText = totalGuesses - correctGuesses;
     winsEl.innerText = correctGuesses;
+    document.getElementById(userGuess + '-total').innerText++;
 }
