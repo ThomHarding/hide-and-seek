@@ -24,7 +24,7 @@
                 Guess where I'm hiding!
             </h2>
             <div id="tree-container" class="hiding-places">
-                <div class="hiding-place">
+                <div id="tree-container" class="hiding-place">
                     <img src="./assets/tree.webp" class="hiding-img" />
                     <button id="tree-button">Tree</button>    
                 </div>
@@ -36,14 +36,24 @@
                     <img src="./assets/shed.png" class="hiding-img" />
                     <button id="shed-button">Shed</button>        
                 </div>
+                <div id="evil-tree-container" class="hiding-place">
+                    <img src="./assets/evil-tree.webp" class="hiding-img" />
+                    <button id="evil-tree-button">Evil Tree</button>        
+                </div>
+                <div id="blurred-boulder-container" class="hiding-place">
+                    <img src="./assets/blurred-boulder.png" class="hiding-img" />
+                    <button id="blurred-boulder-button">Blurred Boulder</button>        
+                </div>
             </div>
             <div>You guessed correctly <span id="wins">0</span> times</div>
             <div>and incorrectly <span id="losses">0</span> times</div>
             <div>out of</div>
             <div> <span id="total">0</span> games.</div>
-            <div>You have guessed shed <span id="shed-total">0</span> times, </div>
+            <div>You have guessed  tree <span id="tree-total">0</span> times, </div>
             <div>boulder <span id="boulder-total">0</span> times, </div>
-            <div>and tree <span id="tree-total">0</span> times.</div>
+            <div>shed <span id="shed-total">0</span> times,</div>
+            <div>evil tree <span id="evil-tree-total">0</span> times, </div>
+            <div>and blurred boulder <span id="blurred-boulder-total">0</span> times. </div>
         </section>
     </main>
     <footer>

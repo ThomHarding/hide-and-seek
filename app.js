@@ -2,18 +2,18 @@
 const shedButton = document.getElementById('shed-button');
 const treeButton = document.getElementById('tree-button');
 const boulderButton = document.getElementById('boulder-button');
+const evilTreeButton = document.getElementById('evil-tree-button');
+const blurredBoulderButton = document.getElementById('blurred-boulder-button');
 
 const shedContainer = document.getElementById('shed-container');
 const treeContainer = document.getElementById('tree-container');
 const boulderContainer = document.getElementById('boulder-container');
+const evilTreeContainer = document.getElementById('evil-tree-container');
+const blurredBoulderContainer = document.getElementById('blurred-boulder-container');
 
 const totalEl = document.getElementById('total');
 const lossesEl = document.getElementById('losses');
 const winsEl = document.getElementById('wins');
-
-const shedTotal = document.getElementById('shed-total');
-const boulderTotal = document.getElementById('boulder-total');
-const treeTotal = document.getElementById('tree-total');
 
 let correctGuesses = 0;
 let totalGuesses = 0;
@@ -36,12 +36,26 @@ boulderButton.addEventListener('click', () => {
     // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
 });
 
+blurredBoulderButton.addEventListener('click', () => {
+    // get a random item to call the 'correct spot'
+    handleGuess('blurred-boulder', getRandomHidingSpot());
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+});
+
+evilTreeButton.addEventListener('click', () => {
+    // get a random item to call the 'correct spot'
+    handleGuess('evil-tree', getRandomHidingSpot());
+    // call the handleGuess function with the correct parameters (the user's guess and the "correct" hiding place) to do DOM work
+});
+
 
 function getRandomHidingSpot() {
     const hidingPlaces = [
         'tree',
         'shed',
-        'boulder'
+        'boulder',
+        'evil-tree',
+        'blurred-boulder'
     ];
 
     const index = Math.floor(Math.random() * hidingPlaces.length);
@@ -57,6 +71,8 @@ function handleGuess(userGuess, correctSpot) {
     shedContainer.classList.remove('face');
     treeContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
+    evilTreeContainer.classList.remove('face');
+    blurredBoulderContainer.classList.remove('face');
     // then increment the guesses
     totalGuesses++;
     // then use getElementById and the correctSpot string to grab the appropriate container from the DOM
